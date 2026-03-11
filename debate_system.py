@@ -12,7 +12,7 @@ from pathlib import Path
 from datetime import datetime
 
 # 配置
-WORKSPACE = Path("/root/.openclaw/workspace")
+WORKSPACE = Path.home() / ".openclaw" / "workspace"
 DEBATE_AGENTS_DIR = WORKSPACE / "debate-agents"
 DEBATE_OUTPUTS_DIR = WORKSPACE / "debate-outputs"
 DEBATE_OUTPUTS_DIR.mkdir(exist_ok=True)
