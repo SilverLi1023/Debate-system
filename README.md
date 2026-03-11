@@ -71,7 +71,7 @@ git clone https://github.com/SilverLi1023/Debate-system-1023.git debate-system
 debate-system/
 ├── SKILL.md                     ← Skill 入口（OpenClaw 自动读取）
 ├── README.md                    ← 本文件
-├── debate_system.py             ← 辅助脚本
+├── LICENSE                      ← MIT 协议
 └── references/
     ├── workflow.md              ← 完整执行手册（核心）
     ├── 01-Research-Agent.md     ← 资料检索 agent prompt
