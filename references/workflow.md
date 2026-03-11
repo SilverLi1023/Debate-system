@@ -112,7 +112,7 @@ sessions_spawn(
    ```
    最后，请调用 feishu_create_doc 创建飞书文档：
    - title: "[{辩题}] 01-资料稿"
-   - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+   - folder_token: "<从TOOLS.md读取，未配置则省略>"
    - content: 只包含资料卡的内容（不要包含概念拆解、资料分类汇总等）
    
    ⚠️ 飞书文档格式要求：
@@ -284,7 +284,7 @@ sessions_spawn(
    1. 将完整立论稿（含自检报告）写入本地文件 debate-outputs/YYYY-MM-DD/02_argument.md
    2. 调用 feishu_create_doc 创建飞书文档：
       - title: "[{辩题}] 02-立论稿"
-      - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+      - folder_token: "<从TOOLS.md读取，未配置则省略>"
       - content: 完整立论稿（含自检报告）
    3. 只返回以下信息给我，不要返回稿件全文：
       【立论稿已创建】
@@ -424,7 +424,7 @@ Defense subagent 追加：
 2. 读取本轮攻击稿 debate-outputs/YYYY-MM-DD/03_round_{N}_opposition.md
 3. 将攻击稿 + 回应稿合并，调用 feishu_create_doc 创建飞书文档：
    - title: "[{辩题}] 03-攻防R{N}"
-   - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+   - folder_token: "<从TOOLS.md读取，未配置则省略>"
    - content: 合并后的完整攻防记录
 4. 只返回以下信息：
    【第{N}轮攻防已创建】
@@ -504,7 +504,7 @@ sessions_spawn(
 1. 将完整评判写入本地文件 debate-outputs/YYYY-MM-DD/04_judge.md
 2. 调用 feishu_create_doc 创建飞书文档：
    - title: "[{辩题}] 04-裁判评判"
-   - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+   - folder_token: "<从TOOLS.md读取，未配置则省略>"
    - content: 完整裁判评判
 3. 只返回以下信息：
    【裁判评判已创建】
@@ -640,7 +640,7 @@ sessions_spawn(
 1. 将完整修缮版立论稿写入本地文件 debate-outputs/YYYY-MM-DD/05_revised_argument.md
 2. 调用 feishu_create_doc 创建飞书文档：
    - title: "[{辩题}] 05-修缮立论稿"
-   - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+   - folder_token: "<从TOOLS.md读取，未配置则省略>"
    - content: 完整修缮版立论稿
 3. 只返回以下信息：
    【修缮立论稿已创建】
@@ -654,7 +654,7 @@ sessions_spawn(
 1. 将完整攻防稿写入本地文件 debate-outputs/YYYY-MM-DD/06_battle_guide.md
 2. 调用 feishu_create_doc 创建飞书文档：
    - title: "[{辩题}] 06-实战攻防稿"
-   - folder_token: "Qey5fKwF7lZxXWd01TycvrPknJc"
+   - folder_token: "<从TOOLS.md读取，未配置则省略>"
    - content: 完整实战攻防稿
 3. 只返回以下信息：
    【实战攻防稿已创建】
@@ -705,7 +705,7 @@ sessions_spawn(
 ```
 feishu_create_doc(
   title="[{辩题}] 辩论备赛目录",
-  folder_token="Qey5fKwF7lZxXWd01TycvrPknJc",
+  folder_token=FEISHU_FOLDER_TOKEN  # 从TOOLS.md读取,
   content=目录页内容
 )
 ```

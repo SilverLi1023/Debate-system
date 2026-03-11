@@ -17,9 +17,9 @@ DEBATE_AGENTS_DIR = WORKSPACE / "debate-agents"
 DEBATE_OUTPUTS_DIR = WORKSPACE / "debate-outputs"
 DEBATE_OUTPUTS_DIR.mkdir(exist_ok=True)
 
-# 飞书文件夹 token（从 TOOLS.md 读取）
+# 飞书文件夹 token（从 TOOLS.md 读取，未配置则为空）
 TOOLS_FILE = WORKSPACE / "TOOLS.md"
-FEISHU_FOLDER_TOKEN = "Qey5fKwF7lZxXWd01TycvrPknJc"  # 默认值
+FEISHU_FOLDER_TOKEN = ""  # 默认为空，存入根目录
 
 
 def load_feishu_folder_token():
@@ -28,9 +28,14 @@ def load_feishu_folder_token():
     if TOOLS_FILE.exists():
         content = TOOLS_FILE.read_text(encoding="utf-8")
         for line in content.split("\n"):
-            if "默认文件夹" in line and "Qey5fKwF7lZxXWd01TycvrPknJc" in line:
-                FEISHU_FOLDER_TOKEN = "Qey5fKwF7lZxXWd01TycvrPknJc"
-                break
+            if "默认文件夹" in line and "**:" in line:
+                # 解析格式：- **默认文件夹**: <token>
+                parts = line.split(":", 1)
+                if len(parts) == 2:
+                    token = parts[1].strip()
+                    if token:
+                        FEISHU_FOLDER_TOKEN = token
+                        break
 
 
 def call_subagent(agent_id: str, message: str, timeout: int = 300) -> str:

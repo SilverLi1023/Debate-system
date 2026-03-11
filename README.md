@@ -82,7 +82,7 @@ debate-system/
 
 ### 飞书文档输出目录
 
-默认写入飞书文件夹 `Qey5fKwF7lZxXWd01TycvrPknJc`。如需更改，在你的 `TOOLS.md` 中修改：
+默认写入飞书根目录。如需指定文件夹，在你的 `TOOLS.md` 中添加：
 
 ```markdown
 ### 飞书文档配置
