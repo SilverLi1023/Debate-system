@@ -32,6 +32,8 @@ git clone https://github.com/SilverLi1023/Debate-system-1023.git debate-system
 
 - **OpenClaw** — 本 skill 作为 OpenClaw agent skill 运行
 - **飞书插件**（可选）— 需要配置飞书 OpenClaw 插件（用于输出文档）
+  - 安装：参考 [飞书插件文档](https://github.com/openclaw/feishu-openclaw-plugin)
+  - 配置后可直接输出到飞书云文档，无需手动复制粘贴
 - **联网搜索** — 资料检索阶段需要 agent 有 web search 能力
 
 > 如果不用飞书，agent 会将稿件以 Markdown 文件保存到本地 `debate-outputs/` 目录。
